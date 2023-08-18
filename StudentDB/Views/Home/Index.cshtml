@@ -8,6 +8,13 @@
 
     @foreach(var obj in Model)
     {
-        <p>@obj.FirstName</p>
+        <div class="card text-white bg-primary border-dark mb-3" style="width: 18rem;">
+          <div class="card-body">
+            <div class="card-header">@obj.FirstName @obj.LastName</div>
+            <p class="card-text ">Grade: @obj.Grade</p>
+            <p class="card-text">GPA: @obj.GPA</p>
+           
+          </div>
+        </div>
     }
 </div>
