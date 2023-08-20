@@ -4,17 +4,22 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Students</h1>
+    <h1 class="title">Students</h1>
 
+    <button class="addButton bi-plus-square-fill"> New Student</button>
+    <div class="row">
+        <div class="col-sm-3">
     @foreach(var obj in Model)
     {
-        <div class="card text-white bg-primary border-dark mb-3" style="width: 18rem;">
+        <div class="card">
+           <button class="editButton bi-pencil-square"></button>
           <div class="card-body">
-            <div class="card-header">@obj.FirstName @obj.LastName</div>
+            <div class="card-title">@obj.FirstName @obj.LastName</div>
             <p class="card-text ">Grade: @obj.Grade</p>
             <p class="card-text">GPA: @obj.GPA</p>
-           
           </div>
         </div>
     }
+        </div>
+    </div>
 </div>
