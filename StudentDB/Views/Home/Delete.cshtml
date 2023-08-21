@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Student
+
+
+<form asp-action="DeletePost">
+    <div class="formContainer">
+        <a class="backButton bi bi-arrow-left" asp-area=" " asp-controller="Home" asp-action="Edit" asp-route-id="@Model.Id"> Back</a>
+      
+
+        <div class="inputContainer">
+            <input class="formInput" asp-for="Id" hidden/>
+            <label class="formLabel">Name: @Model.FirstName @Model.LastName</label>
+            <label class="formLabel">Grade: @Model.Grade</label>
+            <label class="formLabel">GPA: @Model.GPA</label>
+           
+           
+
+            <button type="submit" class="confirmDelete">Confirm Deletion</button>
+
+        </div>
+    </div>
+</form>

@@ -11,8 +11,8 @@ using StudentDB.Data;
 namespace StudentDB.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230818005630_AddStudent")]
-    partial class AddStudent
+    [Migration("20230821000328_AddStudentToDatabase")]
+    partial class AddStudentToDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,14 +39,11 @@ namespace StudentDB.Migrations
                     b.Property<float>("GPA")
                         .HasColumnType("real");
 
-                    b.Property<float>("Grade")
-                        .HasColumnType("real");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("Grade")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("picture")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

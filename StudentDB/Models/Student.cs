@@ -12,9 +12,12 @@ namespace StudentDB.Models
         [Required]
         public string LastName { get; set; }
 
-        public string picture { get; set; }
+        [Required]
+        public string Grade { get; set; }
+
+        [Required]
         public float GPA { get; set; }
-        public float Grade { get; set; }
+     
 
     }
 }

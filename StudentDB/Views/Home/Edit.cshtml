@@ -3,12 +3,14 @@
 *@
 @model Student
 
-<form method = "post">
+<form method = "post" asp-action="Edit">
     <div class="formContainer">
-        <a class="addButton bi bi-arrow-left" asp-area=" " asp-controller="Home" asp-action="Index"> Back</a>
-        <p class="formTitle">New Student</p>
+        <a class="backButton bi bi-arrow-left" asp-area=" " asp-controller="Home" asp-action="Index"> Back</a>
+        <p class="formTitle">Update Student</p>
 
-        <div class=" inputContainer">
+        <div class = "inputContainer">
+            <input asp-for="Id" hidden />
+          
             <label class="formLabel" asp-for="FirstName">First Name:</label>
             <input class="formInput" asp-for="FirstName">
             <span asp-validation-for="FirstName" class="errorMsg"></span>
@@ -28,13 +30,15 @@
             
             </select>
     
+
             <label class="formLabel" asp-for="GPA">GPA:</label>
             <input class="formInput" asp-for="GPA">
             <span asp-validation-for="GPA" class="errorMsg"></span>
 
-            <button type="submit" class="formSubmit">Create</button>
+            <button type="submit" class="formSubmit">Update</button>
 
-           
+            <a class="deleteButton bi-trash3-fill" asp-area="@Model.Id" asp-controller="Home" asp-action="Delete" asp-route-id="@Model.Id">Delete Student</a>
+
         </div>
     </div>
 </form>

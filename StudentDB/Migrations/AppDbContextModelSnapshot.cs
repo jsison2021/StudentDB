@@ -36,14 +36,11 @@ namespace StudentDB.Migrations
                     b.Property<float>("GPA")
                         .HasColumnType("real");
 
-                    b.Property<float>("Grade")
-                        .HasColumnType("real");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("Grade")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("picture")
+                    b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
