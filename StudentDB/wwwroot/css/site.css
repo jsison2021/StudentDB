@@ -34,8 +34,14 @@ body {
     color: #50c878;
 }
 
+/*
+    Add and Search
+*/
+.addSearch {
+    display: flex;
+    justify-content: space-between;
+}
 .addButton {
-   
     padding: 10px;
     font-weight: bold;
     font-size: 20px;
@@ -45,8 +51,7 @@ body {
     border-radius: 5px;
     background-color: #50c878
 }
-.addButton:hover {
-   
+.addButton:hover {  
     padding: 10px;
     font-weight: bold;
     font-size: 20px;
@@ -57,13 +62,38 @@ body {
     background-color: #50c878
 }
 
+.searchForm {
+    display: flex;
+}
+
+.searchBar {
+    display: inline-block;
+    background-color: #50c878;
+    color: #191716;
+    text-align: left;
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    width: 100%;
+   
+}
+.searchButton {
+    display: inline-block;
+    background-color: #50c878;
+    text-align: left;
+    height: 40px;
+    font-weight: bold;
+    font-size: 20px;
+    border-style: solid;
+}
 /*
   Card CSS
 */
 .editButton {
     background: transparent;
     border: none;
-    margin: 10px 0px 0px 30%;
+  
     color: #50c878;
     text-align: right;
     font-size: 20px;
@@ -71,7 +101,7 @@ body {
 .editButton:hover {
     background: transparent;
     border: none;
-    margin: 10px 0px 0px 30%;
+   
     color: #50c878;
     text-align: right;
     font-size: 20px;
@@ -88,16 +118,24 @@ body {
 }
 
 .card-title {
+    display: inline;
     text-align: center;
-    border-top-left-radius: 15px;
+    
     font-size: 25px;
     color: #50c878;
-    background-color: #191716
 }
 
 .card-text {
     font-size: 20px;
    
+}
+
+.displayLabel {
+    display: flex;
+    padding: 10px 10px 0px 10px;
+    border-top-left-radius: 15px;
+    justify-content: space-between;
+    background-color: #191716;
 }
 
 /*

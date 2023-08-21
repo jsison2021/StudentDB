@@ -6,7 +6,8 @@
 <div class="text-center">
     <h1 class="title">Student Database</h1>
 
-    <a class="addButton bi-plus-square-fill" asp-area=" " asp-controller="Home" asp-action="Create"> New Student</a>
+        <a class="addButton bi-plus-square-fill" asp-area=" " asp-controller="Home" asp-action="Create"> New Student</a>
+       
     
     <div class="row">
        
@@ -16,8 +17,11 @@
             <div class="card">
                     
                 <div class="card-body">
-                <div class="card-title">@obj.FirstName @obj.LastName<a class="editButton bi-pencil-square" asp-area="@obj.Id" asp-controller="Home" asp-action="Edit" asp-route-id="@obj.Id"></a></div>
-            
+               
+                <div class="displayLabel">
+                    <div class="card-title">@obj.FirstName @obj.LastName</div>
+                    <a class="editButton bi-pencil-square" asp-area="@obj.Id" asp-controller="Home" asp-action="Edit" asp-route-id="@obj.Id"></a>
+                </div>
                 <p class="card-text ">Grade: @obj.Grade</p>
                 <p class="card-text">GPA: @obj.GPA</p>
                        

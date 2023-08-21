@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using StudentDB.Data;
 using StudentDB.Models;
 using System.Diagnostics;
@@ -21,9 +22,27 @@ namespace StudentDB.Controllers
         public IActionResult Index()
         {
             IEnumerable<Student> objStudentList = _db.Students;
+
+    
             return View(objStudentList);
         }
+        //Post
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Student obj)
+        {
 
+            if (ModelState.IsValid)
+            {
+                _db.Students.Add(obj);
+                _db.SaveChanges();
+                TempData["success"] = "Student Profile Created!";
+                return RedirectToAction("Index");
+            }
+
+            return View(obj);
+
+        }
         public IActionResult Create()
         {
           
@@ -64,23 +83,7 @@ namespace StudentDB.Controllers
 
         }
 
-        //Post
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Create(Student obj)
-        {
-
-            if (ModelState.IsValid)
-            {
-                _db.Students.Add(obj);
-                _db.SaveChanges();
-                TempData["success"] = "Student Profile Created!";
-                return RedirectToAction("Index");
-            }
-
-            return View(obj);
-            
-        }
+       
 
         //Delete
         public IActionResult Delete(int? id)
